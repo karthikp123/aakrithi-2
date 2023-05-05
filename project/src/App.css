@@ -1,0 +1,849 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--primary-font);
+}
+
+/* fonts */
+@font-face {
+  font-family: 'Barlow';
+  src: url('./assets/font/Barlow-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Barlow Bold';
+  src: url('./assets/font/Barlow-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Barlow SemiBold';
+  src: url('./assets/font/Barlow-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'Barlow ExtraBold';
+  src: url('./assets/font/Barlow-ExtraBold.ttf');
+}
+
+/* color and font name */
+:root{
+  --primary-blue: #2268D2;
+  --primary-font: 'Barlow';
+  --black: #000000;
+  --grey: #7A7A7A;
+  --primary-gradiant: linear-gradient(to bottom, #2268D2, #000000)
+}
+
+/* header img */
+.header img{
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-top-right-radius: 120px;
+  border-bottom-left-radius: 120px;
+}
+
+/* general */
+img{
+  object-fit: cover;
+}
+
+h1, h3, h4{
+  font-family: "Barlow Bold";
+}
+
+h1{
+  font-size: 64px;
+  text-align: center;
+}
+
+h2{
+  font-family: "Barlow SemiBold";
+}
+
+main{
+  min-height: calc(100vh - 129px);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+/* search bar */
+.search-bar{
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 6px 15px 6px 5px;
+  margin: 10px;
+  align-items: center;
+}
+
+.search-bar:focus,
+.search-bar:focus-within,
+.search-bar:active{
+  border-color: var(--primary-blue) !important;
+}
+
+.search-input{
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  padding: 2px;
+}
+
+.search-bar svg{
+  color: var(--primary-blue) !important;
+}
+
+/* sections */
+section h2{
+  font-size: 30px;
+  font-family: "Barlow SemiBold";
+}
+
+section a{
+  font-size: 20px;
+}
+
+/* hoverable links */
+.link-hover:hover{
+  text-decoration: underline;
+}
+
+/* buttons */
+.btn-white-outline{
+  outline: none;
+  border: none;
+  background: transparent;
+  color: white;
+  font-family: 'Barlow SemiBold';
+  font-size: 25px;
+  border: 3px solid white;
+  border-radius: 36px;
+  padding: 12px 54px;
+}
+
+.btn-white-outline:hover{
+  background-color: white;
+  color: black
+}
+
+.btn-blue{
+  outline: none;
+  border: none;
+  background: linear-gradient(180deg, #2268D2 28.97%, #000000 182.5%);;
+  color: white;
+  font-family: 'Barlow SemiBold';
+  font-size: 25px;
+  border: 3px solid inherit;
+  border-radius: 36px;
+  padding: 15px 50px;
+}
+
+.btn-blue:hover{
+  background: white;
+  color: var(--primary-blue);
+}
+
+/* gradiant on the element */
+.gradiant-box{
+  background: var(--primary-gradiant);
+  border-radius: 20px;
+}
+
+/* logo */
+#logo,
+#logo span{
+  font-family: 'Barlow ExtraBold';
+  color: var(--black);
+  font-size: 22px !important;
+}
+
+/* text in theme color */
+.primary-text{
+  color: var(--primary-blue) !important;
+}
+
+/* gradiant button */
+.primary-btn-top{
+  background: linear-gradient(270deg, var(--primary-blue) -17.5%, var(--black) 181%);
+  padding: 2px;
+  border-radius: 20px;
+}
+
+.primary-btn{
+  font-family: 'Barlow SemiBold';
+  font-size: 18px;
+  color: white;
+  border: 0;
+  outline: 0;
+  border-radius: 20px;
+  padding: 5px 25px;
+  background: linear-gradient(270deg, var(--primary-blue) -17.5%, var(--black) 181%);
+}
+
+.primary-btn:hover{
+  background: white;
+  color: var(--primary-blue);
+}
+
+/* TOP Header */
+nav{
+  position: sticky !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding-top: 12px !important;
+  z-index: 100000;
+}
+
+.nav-shadow{
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav a,
+nav svg{
+  font-family: var(--primary-font);
+  font-size: 18px !important;
+  color: var(--black) !important;
+  text-decoration: none;
+}
+
+nav a{
+  font-size: 20px !important;
+}
+
+nav svg{
+  font-size: 22px !important;
+}
+
+nav a.active {
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+
+nav a.active::after {
+  content: '';
+  position: absolute;
+  left: calc( 50% - 10px);
+  bottom: 0;
+  height: 3px;
+  width: 25px;
+  margin: auto;
+  background: linear-gradient(to right, var(--primary-blue) , var(--black) );
+}
+
+.navbar-toggler{
+  border: none;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* user profile on header */
+.userAvatar{
+  width: 40px;
+  height: 40px;
+  padding: 0px;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.userAvatar img{
+  width: 100%;
+  height: auto;
+  object-position: center;
+}
+
+.userAvatar svg{
+  font-size: 17px !important;
+  color: var(--primary-blue)
+}
+
+/* footer */
+footer{
+  background-color: var(--black);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+footer #logo{
+  color: white;
+  font-size: 20px !important;
+}
+
+footer a{
+  color: var(--grey);
+  font-size: 18px;
+  text-decoration: none;
+}
+
+footer a:hover{
+  color: var(--primary-blue);
+}
+
+/* artist contact */
+.contact-op img{
+  width: 40px;
+}
+
+/* Explore */
+.explore-box{
+  align-items: center;
+  border-radius: 20px;
+  background: linear-gradient(180deg, var(--primary-blue) -21%, var(--black) 100%);
+  overflow: hidden;
+  height: 180px;
+  text-decoration: none;
+  transition: background 0.2s ease-in;
+}
+
+.explore-box:hover{
+  background: linear-gradient(180deg, var(--primary-blue) -21%, var(--black) 70%);
+}
+
+.explore-box .col-md-3{
+  height: 100%;
+}
+
+.explore-box img{
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  transition: all 0.1s ease-in;
+}
+
+.explore-box h4{
+  color: white;
+  font-family: 'Barlow Bold';
+  text-decoration: none;
+  font-size: 20px;    
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.explore-box h4:hover{
+  text-decoration: underline;
+}
+
+/* Store */
+/* art and profile details */
+.art-card,
+.profile-card{
+  background: linear-gradient(360deg, var(--black)  0%, var(--primary-blue) 100%);
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  transition: background 0.2s ease-in;
+}
+
+.art-card:hover{
+  background: linear-gradient(360deg, var(--black)  0%, var(--primary-blue) 200%);
+}
+
+section .profile-card{
+  width: 150px;
+}
+
+.art-card span:first-child{
+  max-width: 150px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
+}
+
+.profile-card span{
+  font-family: "Barlow SemiBold";
+  font-size: 13px;    
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.profile-card .name{
+  background-color: white;
+  color: var(--black);
+  border-radius: 20px;
+  margin: 15px 0 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;    
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3px 20px;
+  display: block;
+}
+
+.profile-card img{
+  width: 90px;
+  height: 90px;
+  margin: auto;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+/* art cdetails */
+.art-card span{
+  font-family: var(--primary-font);
+  font-size: 20px;
+  color: white;
+}
+
+.art-card svg{
+  font-size: 22px;
+}
+
+.art-card img{
+  width: 100%;
+}
+
+/* Tabs (STORE PAGE) */
+.nav-tabs button{
+  font-family: "Barlow SemiBold";
+  font-size: 18px;
+  color: var(--black);
+  border-radius: 15px !important;
+  border:  none !important;
+  background-color: white !important;
+}
+
+.nav-tabs .nav-item.show .nav-link, 
+.nav-tabs .nav-link.active{
+  background-color: var(--primary-gradiant) !important;
+  color: white;
+  outline: none;
+}
+
+.nav-tabs .nav-item{
+  background: var(--primary-gradiant);
+  padding: 3px 4px 4px;
+  border-radius: 20px;
+}
+
+.nav-tabs{
+  max-width: 950px;
+  text-align: center;
+  margin: auto;
+  justify-content: center;
+  border: none;
+  padding-bottom: 30px;
+}
+
+/* profile card */
+.profile-overview{
+  background: white;
+  padding: 35px 20px;
+  color: black;
+  text-align: center;
+  border-radius: 20px;
+  max-width: 320px;
+  margin: auto;
+}
+
+.profile-overview .profile-basic{
+  width: auto;
+}
+
+.profile-basic{
+  width: fit-content;
+}
+
+.profile-basic img{
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: var(--primary-gradiant);
+  padding: 3px;
+  box-shadow: 0px 4px 4px rgba(0,0,0, 0.25);
+}
+
+.profile-basic span{
+  font-family: 'Barlow SemiBold';
+  font-size: 14px;
+  margin: 2px 0px 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profile-basic .name{
+  font-family: 'Barlow SemiBold';
+  font-size: 19px;
+  margin: 10px 0 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn-black{
+  background-color: var(--black);
+  color: white;
+  font-family: 'Barlow Bold';
+  font-size: 20px;
+  padding: 8px;
+  border-radius: 20px;
+  margin-top: 40px;
+  border: 2px solid var(--black);
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn-black:hover{
+  background-color: white;
+  border: 2px solid var(--black);
+  color: var(--black)
+}
+
+/* art details */
+.art-detail h2{
+  font-family: "Barlow Bold";
+  font-size: 22px;
+  min-width: 200px;
+}
+
+.art-detail svg{
+  font-size: 30px;
+}
+
+.art-detail svg + span{
+  font-family: 'Barlow SemiBold';
+  font-size: 22px;
+  white-space: nowrap;
+}
+
+.art-detail p.title{
+  font-size: 18px;
+  font-family: "Barlow Bold";
+  margin: 45px 0 10px;
+}
+
+.art-detail p{
+  font-size: 18px;
+  font-family: var(--primary-font);
+  margin: 20px 0;
+}
+
+.art-detail .size{
+  font-size: 18px;
+  font-family: var(--primary-font);
+  margin: 20px 0 40px;
+}
+
+.art-detail .price{
+  font-family: 'Barlow Bold';
+  font-size: 18px;
+}
+
+.art-detail button{
+  background-color: white;
+  border: none;
+  outline: none;
+  padding: 12px 8px;
+  width: 220px;
+  border-radius: 22px;
+  font-family: 'Barlow ExtraBold';
+  margin-left: calc(50vh - 100px);
+  font-size: 18px;
+  border: 2px solid white;
+}
+
+.art-detail button:hover{
+  color: white;
+  background-color: transparent;
+}
+
+.art-detail p.bold{
+  font-family: "Barlow Bold";
+}
+
+/* home cover image */
+.main-img{
+  max-width: 620px;
+  height: 330px;
+  border-radius: 20px;
+}
+
+.main-img img{
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+/* description */
+.description p{
+  margin: auto;
+  font-family: 'Barlow';
+  max-width: 600px;
+  text-align: center;
+  margin: 20px auto;
+  font-size: 16px;
+}
+
+.description h5{
+  font-family: 'Barlow SemiBold';
+  font-size: 20px;
+}
+
+.description svg{
+  font-size: 30px;
+}
+
+/* categories  */
+.category-card{
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.category-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-card .gradiant-down{
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: calc(100% - 40px);
+  left: 20px;
+  right: 20px;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  font-family: 'Barlow SemiBold';
+  background: linear-gradient(to top, var(--primary-blue), var(--black));
+  color: white;
+  padding: 3px 5px;
+  font-size: 17px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 991px) {
+  nav a.active::after{
+    content: none !important;
+  }
+
+  .primary-btn-top{
+    background: none;
+    padding: 0;
+  }
+  
+  nav a.active{
+    background: linear-gradient(to right, var(--primary-blue), var(--black));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .userAvatar svg{
+    margin: 20px auto;
+  }
+  
+  section .profile-card{
+    width: 100% !important
+  }
+
+  .nav-hr{
+    border-top: 2px solid var(--primary-blue);
+    padding: 10px 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header .btn-white-outline{
+    padding: 13px 60px;
+  }
+
+  .header .btn-blue{
+    padding: 15px 60px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .explore-box{
+    height: auto;
+  }
+
+  .art-detail button{
+    margin-left: 10px;
+  }
+
+  h1{
+    font-size: 40px;
+    padding: 5px 20px;
+  }
+
+  .btn-white-outline,
+  .btn-blue{
+    padding: 5px 30px;
+    font-size: 18px;
+    border-width: 2px;
+  }
+  
+  .profile-basic{
+    width: auto;
+  }
+
+}
+  
+@media screen and (max-width: 575px) {
+  .container{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .explore-box{
+    height: auto;
+  }
+  
+  .explore-box h4{
+    font-size: 18px;
+  }
+
+  .art-card span{
+    font-size: 18px;
+  }
+
+  .art-card svg {
+    font-size: 19px;
+  }
+
+  .art-detail .btn-white{
+    padding: 5px;
+    width: 136px;
+    border-radius: 20px;
+    height: 47px;
+  }
+
+  h1{
+    font-size: 30px;
+  }
+
+  .header img{
+    height: 400px !important;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+  }
+}
+
+
+@media screen and (max-width: 390px) {
+  .explore-box a{
+    font-size: 16px;
+  }
+
+  .explore-box h4 {
+    font-size: 16px;
+  }
+}
+
+/* login */
+
+.login-parent{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  width:100%;
+  
+}
+.login-btn {
+  background: linear-gradient(to right, #1B53A8, #2F2E5D, #030A14);
+  border-radius: 20px; /* adjust the radius as needed */
+  color:white;
+}
+.login_with_google{
+  border-radius: 20px; /* adjust the radius as needed */
+  color:black;
+}
+.welcome_back{
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #1D59B3, #113366, #030A14);
+  color: white;
+
+}
+
+/* become artist form */
+.explore_pages{
+  /* min-height: 100vh; */
+  display: flex;
+  justify-content: center; 
+  width: 100%;
+  min-height: 80vh;
+}
+.explore_info{
+  width:50%;
+}
+.manage-blog{
+  min-height: 100vh;
+}
+.user_profile{
+  background-color: #143E7C;
+  color:white;
+}
+.user_image{
+  width:40px;
+  height: 40px;
+  border-radius: 20px;
+}
+.dashboard_image{
+  width:100px;
+  height: 100px;
+  border-radius: 50px;
+}
+.address-dasboard-card{
+  background-color: white;
+  color:black;
+}
+.dashboard_edit_btn{
+  background-color:#143E7C;
+  color: white;
+}
+.dashboard_edit_link{
+  color: white;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background-color: white;
+  color:blank;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.art_in_dashboard{
+  background: linear-gradient(to bottom, #1D59B3, #113366, #030A14);
+  color:white !important;
+  
+}
+
+
